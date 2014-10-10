@@ -10,29 +10,28 @@ use Struct;
 
 =head1 NAME
 
-  FFW2 - Fold and Filter With 2 matures
-  A method used to check whether a candidate sequence like a real pre-miRNA
+  FFW2 - Fold and Filter With 2 short small RNAs
+  A method used to evaluate whether the input sequence is a real pre-miRNA
 
 =head1 SYNOPSIS
 
   use FFW2;
-  $seq="ATGCTTCCGGCCTGTTCCCTGAGACCTCAAGTGTGAGTGTACTATTGATGCTTCACACCTGGGCTCTCCGGGTACCAGGACGGTTTGAGCAGAT";
-  $tag1="TCCCTGAGACCTCAAGTGTGA";
-  $tag2="ACACCTGGGCTCTCCGGGTACC";
-  $fold={};
-  $pass=ffw2($seq,$fold,$tag1,$tag2,'max_bulge' => 4,'asymmetry' => 3);
-  $pass=ffw2($seq,$fold,$tag1,$tag2,'max_energy' => -18, 'min_pair' => 14, 'size_diff' => 4,
+  $seq = "ATGCTTCCGGCCTGTTCCCTGAGACCTCAAGTGTGAGTGTACTATTGATGCTTCACACCTGGGCTCTCCGGGTACCAGGACGGTTTGAGCAGAT";
+  $tag1 = "TCCCTGAGACCTCAAGTGTGA";
+  $tag2 = "ACACCTGGGCTCTCCGGGTACC";
+  $fold = {};
+  $pass = ffw2($seq, $fold, $tag1, $tag2, 'max_bulge' => 4,'asymmetry' => 3);
+  $pass = ffw2($seq, $fold, $tag1, $tag2, 'max_energy' => -18, 'min_pair' => 14, 'size_diff' => 4,
     'max_bulge' => 4, 'asymmetry' => 5, 'min_space'=>5, 'max_space' => 55, 'flank' => 10);
 
 
 =head1 AUTHOR
-liqb <liqb@genomics.org.cn> 2008-9-3
+liqb <liqb@genomics.cn> 
 
 =head1 BUG
 
-Kira Neller <nellerk@yorku.ca> reports a bug at line 109: 
-"my" variable $tag2_beg masks earlier declaration in same scope at /usr/local/mireap_0.2/lib/FFW2.pm line 109.
-
+2014-10-10
+Kira Neller <nellerk@yorku.ca> reports a bug at line 109:  my declaration masks earlier declaration in same scope
 
 =cut
 
