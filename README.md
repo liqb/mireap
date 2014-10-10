@@ -1,44 +1,32 @@
-mireap
+mireap: discover microRNA genes from small RNA sequencing reads
 ======
 
-Indentify microRNA genes from small RNA sequencing data
+## Synopsis
 
-Usage
-
-Version
-
-Author
-
-
-Program: MIREAP (Reap miRNAs from deeply sequenced smRNA library)
-Version: 0.2
-Contact: Li Qibin <liqb@genomics.org.cn>
-  Bioinformatics department, Beijing Genomics Institute
-
-
-1. Introduction
 MIREAP combines small RNA position and depth with a model of
 microRNA biogenesis to discover microRNAs from deeply sequenced
-small RNA library.
+small RNA libraries.
 
-2. Installation
-You must have Vienna RNA Package (http://www.tbi.univie.ac.at/RNA)
-installed on your computer and make sure that its perl interface
-is accessible.
+## Installation
+Install Vienna RNA Package (http://www.tbi.univie.ac.at/RNA) on your computer and make sure that its perl interface
+(RNA.pm) is accessible.
 
-Copy mireap_0.2.tar.gz to a directory (/foo/bar) and unpack
-it by command:
-  tar -zxvf mireap_0.2.tar.gz
-
-Before running mireap, you need add path /foo/bar/mireap_0.1/lib to
-environment variable PERL5LIB:
-For csh/tcsh:
-  setenv PERL5LIB /foo/bar/mireap_0.2/lib
-For sh/ksh/bash:
+Copy mireap*.tar.gz to a target directory (/foo/bar) and unpack it:
+```
+tar -zxvf mireap*.tar.gz
+```
+Before running mireap, you need add path /foo/bar/mireap*/lib to environment variable PERL5LIB:
+```
+In csh/tcsh:
+setenv PERL5LIB /foo/bar/mireap_0.2/lib
+```
+```
+In sh/ksh/bash:
   export PERL5LIB=/foo/bar/mireap_0.2/lib
+```
 
-
-3. Usage
+## Usage
+```
 mireap.pl -i <smrna.fa> -m <map.txt> -r <reference.fa> -o <outdir>
 Options:
 -i <file>  Small RNA library, fasta format, forced
@@ -58,22 +46,20 @@ Options:
 -s <int>   Maximal asymmetry of miRNA/miRNA* duplex
 -f <int>   Flank sequence length of miRNA precursor (10)
 -h         Help
-
+```
 Please convert your small RNA file into fasta format and append
 sequencing frequence to sequence Id, just like this entry:
+```
 >t0000035 3234
 GAATGGATAAGGATTAGCGATGATACA
-(t0000035 is read_ID, 3234 is sequencing frequence)
+```
+t0000035 is tagID, 3234 is read count.
 
 The format of small RNA mapping file should be (delimited by tab or
 space):
-read_ID,chr_ID,start,end,strand(+/-)
+read_ID, chr_ID, start, end, strand(+/-)
 
-You can make MIREAP run on the test data by execute comand:
-perl ../bin/mireap.pl -i rna.fa -m map.txt -r ref.fa
-
-
-4. Output format
+Output format
 MIREAP produce three files at each run.
 
 *.gff
@@ -89,3 +75,20 @@ into the maturation process of miRNAs.
 *.log
 This log file records parameters, start end time and other informations.
 
+
+## Tests
+
+You can make a test run using test data by command:
+```
+perl ../bin/mireap.pl -i rna.fa -m map.txt -r ref.fa
+```
+
+## Contributors
+
+QIBIN LI <liqb@genomics.cn>
+
+
+
+## License
+
+A short snippet describing the license (MIT, Apache, etc.)
