@@ -92,3 +92,7 @@ QIBIN LI <liqb@genomics.cn>
 ## License
 
 A short snippet describing the license (MIT, Apache, etc.)
+
+
+## BUGS
+
