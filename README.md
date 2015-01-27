@@ -87,8 +87,8 @@ QIBIN LI (liqb@genomics.cn)
 
 Please contact if you had new ideas to improve *mireap* or report a bug.
 
-## License
+### License
 GPL v3
 
-## BUGS
+### BUGS
 
