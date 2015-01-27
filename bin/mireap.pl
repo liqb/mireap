@@ -1,5 +1,6 @@
 #!/usr/bin/perl
 # Reap microRNAs from deeply sequenced small RNA library
+# version 0.20
 
 use strict;
 use FFW1;
