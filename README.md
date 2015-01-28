@@ -5,7 +5,7 @@ current version: 0.20
 
 ### Synopsis
 
-MIREAP predicts new miRNA genes from small RNA sequencing reads by modelling the biogenesis and structure of miRNA.
+MIREAP predicts new miRNA genes from small RNA sequencing reads by modelling the biogenesis process and 2D structure of miRNA genes.
 
 ### Installation
 
