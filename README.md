@@ -5,9 +5,7 @@ current version: 0.20
 
 ### Synopsis
 
-MIREAP combines small RNA position and depth with a model of
-microRNA biogenesis to discover microRNAs from deeply sequenced
-small RNA libraries.
+MIREAP predicts new miRNA genes from small RNA sequencing reads by modelling the biogenesis and structure of miRNA.
 
 ### Installation
 
